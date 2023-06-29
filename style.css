@@ -1,0 +1,186 @@
+body{
+    background-color: #c9c;
+    transition: 1s ease-in-out;
+}
+
+#title{
+    text-align: center;
+    color: #223;
+    margin: 0 auto;
+}
+
+#grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.cell{
+    width: 46px;
+    height: 46px;
+    border: 2px solid black;
+    background-color: white;
+    display: flex;
+    transition: .5s;
+}
+
+.clicked{
+    background-color: #535;
+}
+
+.cell:hover:not(.clicked){
+    background-color: #fdf
+}
+
+.total{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.total.complete{
+    color: green;
+    background-color: white;
+    rotate: 360deg;
+}
+
+.total.wrong{
+    color: #912;
+    animation: shake 300ms linear;
+}
+
+
+@keyframes shake {
+    0%{rotate: 0deg;}
+    20%{rotate: 20deg;}
+    40%{rotate: 0deg;}
+    60%{rotate: -20deg;}
+    80%{rotate: 0deg;}
+    85%{rotate: 5deg;}
+    90%{rotate: 0deg;}
+    95%{rotate: -5deg;}
+    100%{rotate: 0deg;}    
+}
+
+#xbutton{
+    width: 46px;
+    height: 34px;
+    background-color: #e5a;
+    border: 3px solid black;
+    margin: 5px auto;
+    border-radius: 15px;
+    transition: .5s;
+}
+
+#xbutton:hover:not(.next){
+    background-color: #f5c;
+}
+
+#xbutton.next{
+    width: 130px;
+    background-color: #3c6;
+    rotate: 180deg;
+}
+
+#insidebutton{
+    width:10px;
+    height:10px;
+    border-radius: 5px;
+    background-color: black;
+    position: relative;
+    left: 18px;
+    top: 12px;
+    visibility: hidden;
+}
+
+.invis{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner{
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    visibility: hidden;
+    position: relative;
+    top: 18px;
+    left: 18px
+}
+
+#diff{
+    width: 120px;
+    height: 35px;
+    background-color: white;
+    border: 3px solid #a36;
+    border-radius: 10px;
+    margin: 18px auto;
+}
+
+#diffball{
+    position: relative;
+    background-color: #4c6;
+    height: 25px;
+    width: 25px;
+    border-radius: 13px;
+    left: 4px;
+    top: 4px;
+    transition: .4s;
+}
+
+#diffball.medium{
+    left: 50px;
+    background-color: #dd1
+}
+
+#diffball.hard{
+    left: 90px;
+    background-color: #f32
+}
+
+#difftext{
+    margin-top: 25px auto;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    font-family: verdana;
+}
+
+#question{
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    background-color: #656;
+    width: 40px;
+    height: 40px;
+    border-radius: 18px;
+    font-size: 30px;
+    justify-content: center;
+    transition: .5s;
+    overflow: hidden;
+}
+#question:hover{
+    padding: 8px;
+    width: 80vw;
+    height: auto;
+}
+
+#question:hover span{
+    display: none;
+}
+
+
+#question:hover:before{
+    font-size: .6em;
+    content: "Each column and row must add to their respective sum. In a column, the value of a cell is equal to row number it is in, and vice versa for columns. Press the pink button or space to toggle the flag option. Press the green button when finished to move to the next level.";
+}
